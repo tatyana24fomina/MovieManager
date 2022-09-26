@@ -1,7 +1,7 @@
 package ru.netology;
 
 public class MoviePosterManager {
-    public MoviePoster[] posters = new MoviePoster[0];
+    private MoviePoster[] posters = new MoviePoster[0];
     private int lastCount;
 
     public MoviePosterManager() {
@@ -30,16 +30,15 @@ public class MoviePosterManager {
     //3.
     public MoviePoster[] findLast() {
         int resultLength;
-       if (posters.length >= this.lastCount) {
-           resultLength = lastCount;
-       }
-       else {
-          resultLength = posters.length;
-      }
+        if (posters.length >= this.lastCount) {
+            resultLength = lastCount;
+        } else {
+            resultLength = posters.length;
+        }
         MoviePoster[] result = new MoviePoster[resultLength];
         for (int i = 0; i < resultLength; i++) {
             result[i] = posters[posters.length - 1 - i];
         }
         return result;
-}
+    }
 }
